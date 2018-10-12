@@ -1,0 +1,51 @@
+﻿@using ShopGumac.Models
+@model List<CartModel>
+@{
+    Layout = null;
+}
+@{
+    <li class="icon-cart-header">
+        <a class="user_cart" href="#">
+
+            <img width="25px" src="~/images/giohang-02.png" alt="GUMAC" title="GUMAC" /> Giỏ hàng
+            <span class="cart_num">@Session["quanity"]</span>
+        </a>
+        <div id="info-icon-cart">
+            @if (Session["cart"] != null)
+            {
+                foreach (var item in (List<CartModel>)Session["cart"])
+                {
+                    <div class="cart_item">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="cart_item_img">
+                                    <img src="/images/@item._image" width="100%" alt="Áo nơ viền cổ">
+                                    <span class="cart_item_quantity">
+                                        @item._quantity
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-xs-9">
+                                <p class="cart_item_name">@item.name</p>
+                                <p class="cart_item_standard">Màu: @item._color</p>
+                                <p class="cart_item_standard">Size: @item._size</p>
+                                <p class="cart_item_price">
+                                    @item._prices.ToString("#,#.00") đ
+                                </p>
+                                <a class="cart_item_del pull-right" style="padding:0 !important;" href="javascript:void(0)">
+                                    <input type="hidden" name="id_product" value="@item.ids"/>
+                                    <img width="25px" src="/images/thungrac-01.png" alt="GUMAC" title="GUMAC">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+                <a class="addToCart_btn" href="@Url.Action("index","Cart")" style="padding:8px 10px !important;
+                font-size: 18px !important;">Xác nhận đơn hàng</a>
+            }
+        </div>
+    </li>
+}
+
+

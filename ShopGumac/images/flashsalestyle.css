@@ -1,0 +1,29 @@
+﻿body{}
+.flashSales h3.flashSales_top_title{text-transform:uppercase;text-align:center;color:#004C70;font-size:20px;font-weight:600;margin-bottom:40px;}
+.timer_program{background:#004e72;color:#fff;padding:9px;text-align:center;border-bottom:3px solid #004e72;font-size:18px;font-weight:bold;white-space:nowrap;z-index:3;}
+.timer_program img{width:20px;}
+.name_program{background:#faa01f;color:#fff;padding:10px;text-align:center;border-bottom:3px solid #004e72;font-size:18px;font-weight:bold;text-transform:uppercase;}
+.rectangle{width:0;height:0;border-bottom:48px solid #004e72;border-right:30px solid transparent;position:absolute;z-index:2;}
+.flashSales_title{padding-bottom:20px;}
+.info_flash_intro ul li:before{content:"\f111";font-family:FontAwesome;color:#faa01f;margin-right:4px;}
+.info_flash_intro img{width:100px;margin:0 auto;}
+.info_flash_intro li{list-style:none;padding:7px 0;}
+.info_flash_intro{background:#f6f6f6;border:1px solid #cdcdcd;margin:25px auto;color:#838383;padding:15px;overflow:auto;}
+.info_flash_intro .flash_img{text-align:center;margin-top:35px;}
+.info_flash_extra{background:#f6f6f6;margin:25px 0;padding:15px;border:1px solid #cdcdcd;border-top:3px solid #004e72;text-align:justify;}
+.info_flash_extra h4{color:#848484;font-size:18px;font-weight:bold;}
+.bottom_line{padding-bottom:10px;}
+.flashSales_title{overflow:auto;}
+.flashSales_text a{color:#838383;display:inline-block;}
+a.active_cate{padding:5px;background-color:#808080;color:white;}
+.flashSales_text a.active_cate:hover{text-decoration:none;color:white;}
+.flashSales_top_content{padding-bottom:30px;}
+@media(max-width:768px){.info_flash_intro .flash_img img{width:50px;margin:0 auto;}
+.name_program{background:#faa01f;color:#fff;padding:10px 0;text-align:center;border-bottom:3px solid #004e72;font-size:12px;font-weight:bold;text-transform:uppercase;white-space:normal !important;min-height:57px;}
+.rectangle{width:0;height:0;border-bottom:57px solid #004e72;border-right:30px solid transparent;position:absolute;z-index:2;}
+.timer_program{background:#004e72;color:#fff;padding:8px 0;text-align:center;border-bottom:3px solid #004e72;font-size:11px;font-weight:bold;white-space:normal;min-height:57px !important;}
+.timer-program-NOW{padding:15px 0px !important;}
+}
+@media(max-width:361px){.name_program{min-height:61px;}
+.rectangle{border-bottom:61px solid #004e72;}
+}

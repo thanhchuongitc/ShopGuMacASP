@@ -1,0 +1,795 @@
+﻿@model ShopGumac.Models.ProductModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section cart{
+    @Html.Action("loadCart", "Index");
+}
+<div class="content_body" style="margin-top: 131px;">
+
+
+    <style>
+        .content_body {
+            background: #f3f3f5;
+        }
+
+        #xzoom-thumbs ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color: #F5F5F5;
+        }
+
+        #xzoom-thumbs::-webkit-scrollbar {
+            width: 1px;
+            background-color: #F5F5F5;
+        }
+
+        #xzoom-thumbs::-webkit-scrollbar-thumb {
+            background-color: white;
+        }
+
+        @@media (max-width:767px) {
+            .content_body {
+                background: #fff;
+            }
+        }
+    </style>
+
+    <div class="productDetail">
+        <h1 class="hidden">Đầm caro tay bèo</h1>
+        <div class="singleProduct">
+            <div class="container">
+                <div class="row">
+                    <div class="top-detail">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="filterProduct clearfix">
+                                <h5 class="pro_title">
+                                    <a href="vay-dam-cong-so.html">@Model.type</a>
+                                    <span><i class="fa fa-caret-right" aria-hidden="true"></i></span>
+                                    <a href="#">@Model.name</a>
+
+                                </h5>
+
+                            </div>
+                        </div>
+                        <div class="clearfix" style="clear:both;"></div>
+                        <div class="sharefb_pc">
+                            <div class="col-md-12 col-sm-12">
+
+                                <div class="fb-save" data-uri="https://gumac.vn/vay-dam-cong-so/ms10874" data-size="small"></div>
+
+                                <div class="fb-like" data-href="https://gumac.vn/vay-dam-cong-so/ms10874" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                            </div>
+                        </div>
+                        <div class="clearfix" style="clear:both;"></div>
+                        <div class="col-md-9 col-sm-9 no-padding-xs" id="singleProductImg">
+                            <link href="/images/normalize.css" rel="stylesheet">
+                            <link rel="stylesheet" href="/images/foundation.css">
+                            <script src="/images/modernizr.js"></script>
+                            <!-- xzoom plugin here -->
+                            <script type="text/javascript" src="/images/xzoom.min.js"></script>
+                            <link rel="stylesheet" type="text/css" href="/images/xzoom.css" media="all">
+                            <!-- hammer plugin here -->
+                            <script type="text/javascript" src="/images/jquery.hammer.min.js"></script>
+                            <link type="text/css" rel="stylesheet" media="all" href="/images/jquery.fancybox.css">
+                            <link type="text/css" rel="stylesheet" media="all" href="/images/magnific-popup.css">
+                            <script type="text/javascript" src="/images/jquery.fancybox.js"></script>
+                            <script type="text/javascript" src="/images/magnific-popup.js"></script>
+                            <!-- Ematics-->
+
+                            <script>
+
+                                //--------Ematics-----------
+                                var products = [{
+                                    id: "MS10874",
+                                    categoryId: 7,
+                                    transactionId: 0,
+                                    price: "220,000" + " VNĐ",
+                                    quantity: 1, //
+                                    name: "Đầm caro tay bèo",
+                                    brandName: "Gumac",
+                                    desc: "",
+                                    imageUrl: "https://gumac.vn/image/t10/img_4433-1061020181401079894.jpg",
+                                    link: "https://gumac.vn/vay-dam-cong-so/ms10874"
+                                }];
+
+                                ematics("log", "product", "browse", products);
+                                //--------End Ematics-----------
+
+                                //--------GA
+
+                                // The impression from a Related Products section.
+                                ga('ec:addImpression', {            // Provide product details in an impressionFieldObject.
+                                    'id': 'MS10874',                   // Product ID (string).
+                                    'name': 'Đầm caro tay bèo', // Product name (string).
+                                    'category': 'VÁY ĐẦM',   // Product category (string).
+                                    'brand': 'Gumac',                // Product brand (string).
+                                    'variant': '',               // Product variant (string).
+                                    'list': 'Related Products',       // Product list (string).
+                                    'position': 1                     // Product position (number).
+                                });
+
+                                // The product being viewed.
+                                ga('ec:addProduct', {                 // Provide product details in an productFieldObject.
+                                    'id': 'MS10874',                     // Product ID (string).
+                                    'name': 'Đầm caro tay bèo',  // Product name (string).
+                                    'category': 'VÁY ĐẦM',     // Product category (string).
+                                    'brand': 'Gumac',                 // Product brand (string).
+                                    'variant': '',                  // Product variant (string).
+                                    'position': 1                       // Product position (number).
+                                });
+
+                                ga('ec:setAction', 'detail');       // Detail action.
+
+
+                                //--------End GA
+                            </script>
+                            <!--End ematics-->
+                            <div id="MS10874">
+                                <style>
+                                    .xzoom-source, .xzoom-preview {
+                                        top: 102px !important;
+                                    }
+
+                                    .xzoom-hidden {
+                                        display: none !important;
+                                    }
+                                    /*.xzoom-lens{
+                                        width:150px !important;
+                                        height:150px !important;
+                                    }*/
+
+                                    #xzoom-default {
+                                        user-select: auto !important;
+                                        -webkit-user-drag: auto !important;
+                                        touch-action: auto !important;
+                                    }
+                                </style>
+                                <div class="col-md-7 col-sm-7">
+                                    <div class="img_singleProduct">
+                                        <div class="large-5 column">
+                                            <div class="xzoom-container">
+                                                <div class="col-sm-10" id="xzoom-img" style="padding: 0;">
+                                                    <img class="xzoom" id="xzoom-default" src="/images/@Model.image[0]" xoriginal="/image/t10/img_4433-1061020181401079894-750.jpg" alt="Đầm caro tay bèo" title="Đầm caro tay bèo" style="width: 100%;">
+                                                </div>
+                                                <div class="xzoom-thumbs col-sm-2 pull-left" id="xzoom-thumbs" style="padding-left: 0px; max-height: 20px; overflow: auto;">
+                                                    @foreach (var item in Model.image)
+                                                    {
+                                                        <a href="/images/@item">
+                                                            <img class="xzoom-gallery xactive" width="50" src="/images/@item" alt="Đầm caro tay bèo" title="Đầm caro tay bèo">
+                                                        </a>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="large-7 column"></div>
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-sm-5 no-padding">
+                                    <div class="detail_singleProduct">
+                                        <div class="box_top">
+                                            <h2>
+                                                @Model.name
+                                            </h2>
+
+                                            <table class="price">
+                                                <tbody>
+                                                    <tr>
+                                                        @if (Model.discount != 0)
+                                                        {
+                                                            var prices = Model.prices - Model.prices * Model.discount / 100;
+                                                            <td class="newPrice">
+                                                                <span class="newPrice_content">
+                                                                    <span id="price_12" class="price2">
+                                                                        @prices.ToString("#,#.00")
+                                                                    </span>
+                                                                    <span>VNĐ</span>
+                                                                </span>
+                                                            </td>
+                                                        }
+                                                        <td class="oldPrice">
+
+                                                            <div class="oldPrice_content">
+
+                                                                <span>
+                                                                    <span id="price_11" class="price1">@Model.prices.ToString("#,#.00") </span>
+                                                                    <span>VNĐ</span>
+                                                                </span>
+                                                            </div>
+
+
+                                                        </td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="intro_detail">
+                                                <p>
+                                                    Đầm caro tay bèo
+                                                </p>
+                                                - Mã sản phẩm: MS10874<br>- Giá bán: 495.000đ<br>- Chất liệu vải: Cotton phối voan và lưới&nbsp;<br>- Màu sắc: Trắng<br>- Chi Tiết Sản Phẩm: 2 lớp thân trên, dài tay 34cm<br>- Size: XS - S - M - L - Xl<br>- Chiều dài sản phẩm size S : 90Cm<br>- Tăng "1Cm" mỗi size.
+                                            </div>
+
+
+
+
+
+                                            <div class="classlist">
+
+                                                <p>
+                                                    <label class="lb_size" style="padding: 0;margin:0; text-transform: uppercase;">
+                                                        Vui lòng chọn MÀU giúp bạn xinh đẹp hơn nào!
+                                                    </label>
+
+                                                </p>
+                                                <ul class="clearfix">
+                                                    <li name="content_id1">
+                                                        @foreach (var i in Model.color)
+                                                        {
+                                                            <label class="lb_size_gs" title="@i">
+                                                                <input name="classcategory_id_1" value="@i" title="@i" type="radio">
+                                                                <span class="box_mausac" style="border: 1px solid #cdcbcc;background-color:#f6f6f6">
+                                                                </span>
+                                                                <span class="ic-check">Check</span>
+                                                            </label>
+                                                        }
+                                                    </li>
+                                                </ul>
+                                                <p>
+                                                    <label class="lb_size" style="padding: 0;margin:0; text-transform: uppercase;">
+                                                        Vui lòng chọn SIZE phù hợp dáng bạn nhất nào!
+                                                    </label>
+
+                                                </p>
+                                                <ul class="clearfix">
+                                                    <li name="content_id2">
+                                                        @foreach (var item in Model.size)
+                                                        {
+                                                            <label class="lb_size_gs" title="@item">
+                                                                <input name="classcategory_id_2" value="@item" type="radio" title="@item">
+                                                                <span class="box_mausac">
+                                                                    @item
+                                                                </span>
+                                                                <span class="ic-check">Check</span>
+                                                            </label>
+                                                        }
+                                                    </li>
+                                                </ul>
+
+                                                <input id="current-product-id" type="hidden" value="MS10874">
+                                                <input id="productsets" type="hidden" value="">
+                                            </div>
+
+                                            <div class="quantityProduct">
+                                                <form style="text-align:left; padding-bottom: 10px;">
+                                                    <label style="display:block;text-transform:uppercase;">Số lượng: </label>
+                                                    <input style="text-align: center;" type="number" name="quantity" id="quantity" value="1">
+
+                                                </form>
+                                            </div>
+                                            <div id="productShopWarehouse">
+
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+
+                            function xemthongsoSize() {
+                                $(".publicImageSize").toggleClass("hidden");
+                            }
+                            function showSize(name) {
+                                $(".size").css({ "display": "none" });
+                                $("#size_" + name).css({ "display": "block" });
+                            }
+                        </script>
+                        <script src="/images/foundation.min.js"></script>
+                        <script src="/images/setup.js"></script>
+
+
+
+
+                        <div class="col-md-3 col-sm-3">
+                            <div style="overflow: auto; margin: 20px 0; ">
+                                <div class="ship_change">
+                                    <div class="ship_change_item">
+                                        <span>
+                                            Miễn phí ship đơn hàng trên 500k (Điều kiện cùng một cửa hàng)
+                                        </span>
+                                    </div>
+                                    <div class="clearfix" style="clear:both"></div>
+                                    <div class="ship_change_item">
+                                        <span>
+                                            Giao hàng toàn quốc. Miễn phí đổi hàng 7 ngày
+                                        </span>
+                                    </div>
+                                    <div class="clearfix" style="clear:both"></div>
+                                    <div class="ship_change_item">
+                                        <span>
+                                            Thanh toán khi nhận hàng Miễn Phí
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="free_ship_change">
+                                    <span class="btn-xs btn-normal">Miễn phí (Free)</span>
+                                </div>
+                            </div>
+                            <div class="willdeliver">
+                                <p class="deli_tit">Sẽ có tại nhà bạn</p>
+                                <p class="deli_con">Trong 1 ngày đối với khu vực TP.HCM</p>
+                                <p class="deli_con">Trong 3-5 ngày đối với các khu vực khác</p>
+                            </div>
+                            <div class="left_content">
+
+
+                                <div class="cartin">
+                                    <div class="cartin_btn">
+                                        <div id="cartbtn_default">
+                                            @*<a class="addToCart_btn">Mua ngay</a>*@
+                                            <div class="addmorecart_content">
+                                                <a class="green_addtocart_btn">
+                                                    <img style="padding:5px 0;" width="20px" src="/images/green-cart.png" alt="GUMAC" title="GUMAC">
+                                                    Thêm vào giỏ hàng
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="attention" id="cartbtn_dynamic"></div>
+                                <div class="help_dt">
+                                    <style>
+                                        /*fix text wrapping*/
+                                        ul.nav.nav-tabs.txtUpper.clearfix.js-productInfoTab {
+                                            white-space: nowrap;
+                                        }
+
+                                        span.nav-subTxt {
+                                            white-space: nowrap;
+                                        }
+
+                                        a.sel-cat-brands {
+                                            white-space: nowrap;
+                                        }
+
+                                        span.js-nav-hd {
+                                            white-space: nowrap;
+                                        }
+
+                                        .b-shoppingBag__viewBag.lfloat {
+                                            white-space: nowrap;
+                                        }
+                                    </style>
+                                    <p style="margin-bottom: 10px; font-size: 18px;" class="strong">BẠN CẦN HỖ TRỢ</p>
+                                    <p style="margin-bottom: 10px;">HÃY LIÊN HỆ: 0972.333.444</p>
+                                    <p style="font-size:13px;color:#929292">
+                                        Thời gian làm việc: 08h:00 - 17h00 <br>(Từ thứ 2 - đến thứ 7)<br>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="singleProduct_detail_content">
+        <div class="container">
+            <div class="row">
+                <div class="clear"></div>
+                <div class="col-md-9 col-sm-9 no-padding">
+                    <div class="product__collateral">
+                        <ul class="nav nav-tabs txtUpper clearfix js-productInfoTab">
+                            <li class="active">
+                                <a href="#productDetails" data-toggle="tab" aria-expanded="true">Thông tin Chi tiết</a>
+                            </li>
+                            <li class="sizeDetailTab">
+                                <a href="#sizeDetails" data-toggle="tab" aria-expanded="false">Đổi hàng - Vận chuyển</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content box">
+                            <div id="productDetails" class="tab-pane box pbl wrapText active" property="gr:description">
+                                <div>
+                                    @foreach (var item in Model.image)
+                                    {
+                                        <div class="border_round">
+                                            <img width="100%" src="/images/@item" title="Đầm caro tay bèo" alt="Đầm caro tay bèo">
+                                        </div>
+                                    }
+                                </div>
+
+
+                            </div>
+                            <div id="sizeDetails" class="tab-pane detailTab pbl box">
+                                <div id="returnPolicy">
+                                    <div>
+                                        <div class="slideProduct_item">
+                                            <h3 class="detail_content_title" style="font-style:italic;">ĐIỀU KIỆN ĐỔI HÀNG</h3>
+                                        </div>
+                                        <div>
+                                            <ol>
+                                                <li>
+                                                    Hàng còn nguyên tem, mác, hóa đơn ,không bị dơ bẩn,hư hỏng, chưa qua sử dụng hoặc sửa chữa, giặt tẩy...
+                                                </li>
+                                                <li>
+                                                    Sản phẩm đã nhận không quá 7 ngày đối với mua Online và 2 ngày đối với mua tại cửa hàng.
+                                                </li>
+                                                <li>
+                                                    Sản phẩm không mua trong thời gian khuyến mãi hoặc giảm giá.
+                                                </li>
+                                                <li>
+                                                    Công ty chỉ ĐỔI HÀNG MIỄN PHÍ trong các trường hợp hàng bị lỗi, không đúng mẫu hoặc không đúng size. Các trường hợp khác quý khách liên hệ bộ phận chăm sóc khách hàng Hotline: 18006013 để được hướng dẫn.
+                                                </li>
+                                                <li>
+                                                    Giá nằm trong chương trình khuyến mãi chỉ áp dụng cho đơn hàng mới. Sản phẩm mua trong chương trình khuyến mãi khi đổi sang sản phẩm khác, khách hàng bù thêm chi phí chênh lệch so với sản phẩm đó.
+                                                </li>
+                                                <li>
+                                                    Trường hợp hết size bắt buộc phải đổi sang sản phẩm khác, sản phẩm khác sẽ được tính theo giá tại thời điểm khách đặt hàng và Công ty chỉ hỗ trợ đổi tối đa 1 lần đối với 1 đơn hàng.
+                                                </li>
+                                            </ol>
+                                        </div>
+
+                                        <div class="slideProduct_item">
+                                            <h3 class="detail_content_title" style="font-style:italic;">LƯU Ý</h3>
+                                        </div>
+                                        <div>
+                                            <ol>
+                                                <li>
+                                                    Quý khách vui lòng đến shop sau 12h - Trừ mùng 1 âm lịch Quý khách vui lòng không mang hàng đến đổi, liên hệ CSKH để được hỗ trợ.
+                                                </li>
+                                                <li>
+                                                    Liên hệ Bộ phận Chăm sóc Khách hàng thông qua Hotline 18006013 - 0902.588.544 - 0986.823.355 hoặc Chat trực tiếp tại website trước khi gửi hàng về đổi.
+                                                </li>
+                                                <li>
+                                                    Quý khách vui lòng không tự ý gửi hàng về khi chưa liên hệ lại bộ phận CSKH của GUMAC. Mọi mất mát về hàng hóa GUMAC hoàn toàn không chịu trách nhiệm.
+                                                </li>
+                                                <li>
+                                                    Trường hợp khách muốn đổi hàng, GUMAC sẽ tiến hành chuyển sản phẩm cần đổi cho khách khi nhận được sản phẩm hoàn trả.
+                                                </li>
+                                            </ol>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div id="deliveryInfo">
+                                    <div>
+                                        <div class="slideProduct_item">
+                                            <h3 class="detail_content_title" style="font-style:italic;">THÔNG TIN VẬN CHUYỂN</h3>
+                                        </div>
+                                        <div>
+                                            <table width="766" border="1" cellpadding="8" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <th width="25%">
+                                                            <h3>KHU VỰC</h3>
+                                                        </th>
+                                                        <th width="25%">
+                                                            <h3>THỜI GIAN</h3>
+                                                        </th>
+                                                        <th width="25%">
+                                                            <h3>PHÍ VẬN CHUYỂN</h3>
+                                                        </th>
+                                                        <th width="25%">
+                                                            <h3>LƯU Ý</h3>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            Khu vực nội thành Hồ Chí Minh
+                                                            <br> - Quận 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, Tân Bình, Tân Phú, Phú Nhuận, Bình Thạnh, Gò Vấp
+                                                        </td>
+                                                        <td width="25%">Vận chuyển trong khoảng 1 - 3 ngày làm việc</td>
+                                                        <td width="25%">MIỄN PHÍ VẬN CHUYỂN</td>
+                                                        <td rowspan="4">
+                                                            - MIỄN PHÍ VẬN CHUYỂN TOÀN QUỐC cho đơn hàng từ 500,000 VNĐ
+                                                            <br>
+                                                            &nbsp;&nbsp;* Chỉ Ship hàng khi với những hóa đơn từ 250.000VNĐ trở lên
+                                                            <br>
+                                                            &nbsp;&nbsp;* Nếu dưới 250.000VNĐ Khách hàng phải chịu phí Ship như sau:
+                                                            <br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;+   Khu vực HCM: 20.000VNĐ
+                                                            <br>
+                                                            &nbsp;&nbsp;&nbsp;&nbsp;+	Tỉnh thành khác: 40.000VNĐ
+                                                            <br>
+                                                            &nbsp;&nbsp;* Khu vực ĐẢO: Quý khách phải chuyển khoản trước cho GUMAC, sau đó GUMAC sẽ lên đơn và chuyển hàng.
+                                                            <br>
+                                                            &nbsp;&nbsp;* Quý khách có thể chuyển khoản qua 1 trong những tài khoản sau:Xem <a href="chinh-sach-thanh-toan.html" target="_blank" style="text-decoration: underline;">tại đây</a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">
+                                                            Khu vực ngoại thành Hồ Chí Minh
+                                                            <br> - Quận 9, 12, Thủ Đức, Bình Tân, Hóc Môn, Bình Chánh, Nhà Bè, Củ Chi
+                                                        </td>
+                                                        <td width="25%">Vận chuyển trong khoảng 1 - 3 ngày làm việc</td>
+                                                        <td width="25%"> Phí 10,000 VNĐ/đơn hàng</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">Các tỉnh thành khác</td>
+                                                        <td width="25%">Vận chuyển trong khoảng 3 - 5 ngày làm việc </td>
+                                                        <td width="25%"> Phí 20,000 VNĐ/đơn hàng</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="25%">Khu vực Đảo</td>
+                                                        <td width="25%">Vận chuyển trong khoảng 3 - 8 ngày làm việc </td>
+                                                        <td width="25%"> Phí 50,000 VNĐ/đơn hàng</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="singleProduct_detail_comment">
+
+                            <div class="fb-comments" data-href="https://gumac.vn/vay-dam-cong-so/ms10874" data-width="100%" data-numposts="10"></div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-3 col-sm-3 hidden-xs">
+                    <h3 class="detail_content_title" style="text-transform:uppercase;border-bottom:1px solid #000;padding:15px 0 7px;">Sản phẩm liên quan</h3>
+
+                    <div class="related_product">
+                        <div class="related_product_item">
+
+                            <div class="listphoto_related_pro">
+                                <a href="a11762.html" class="product_url">
+                                    <img width="100%" src="/images/img_9049271120171035139084.jpg" alt="Áo len nút tay" title="Áo len nút tay">
+
+                                </a>
+                            </div>
+                            <div class="pro_related_info">
+                                <h3 class="titleProduct">
+                                    <a href="a11762.html" class="product_url">
+                                        Áo len nút tay A11762
+                                    </a>
+                                </h3>
+                                <div class="mPrice">
+
+                                    <span class="sale_price_list_gs">
+                                        390,000 đ
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+
+        @*<div class="slideProduct_item">
+            <h3 class="detail_content_title">Sản phẩm bạn đã xem</h3>
+            <div class="slide-relatedProduct">
+
+                <div class="relatedProduct">
+                    <div class="row">
+                        <script src="/images/sly.list_product_blog.js"></script>
+                        <link href="/images/sly.list_product_blog.css" rel="stylesheet">
+                        <div class="wrap">
+                            <div class="frame list-slide-5" id="basic">
+
+                                <div class="category_basic_5" style="overflow: hidden;">
+                                    <ul class="clearfix" style="transform: translateZ(0px); width: 180px;">
+                                        <li class="active">
+                                            <a href="ms10874.html" class="pro-url" style="display:block;position: relative;">
+                                                <img width="100%" src="/images/img_4433-1061020181401079894-180.jpg" alt="Đầm caro tay bèo" title="Đầm caro tay bèo">
+                                                <div class="icon-display-combo">
+                                                    <img src="/images/200k061020181044110754.png" alt="Đầm caro tay bèo" title="Đầm caro tay bèo" style="margin-top: 0;width:45px !important;height:auto !important;min-height:0;border:none;vertical-align:top">
+                                                </div>
+                                            </a>
+                                            <div class="slider-item-title">
+                                                <div class="">
+                                                    <a class="more" href="ms10874.html">
+                                                        MUA NGAY
+                                                    </a>
+
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <a class="prevPage disabled">
+                                    <i class="fa fa-chevron-left"></i>
+                                </a>
+                                <a class="nextPage disabled">
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>*@
+
+    </div>
+    <!-- Start Criteo Product tag -->
+
+    <script type="text/javascript" src="/images/ld.js" async="true"></script>
+    <script type="text/javascript">
+        var deviceType = (window.innerWidth <= 767) ? 'm' : (window.innerWidth >= 980) ? 'd' : 't';
+
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+
+            { event: "setAccount", account: 42493 },
+            { event: "setSiteType", type: deviceType },
+            { event: "setEmail", email: "" },
+            { event: "viewItem", item: "MS10874" }
+        );
+    </script>
+    <!-- End Criteo Product tag -->
+    <script>
+        $(".lb_size_gs input[name='classcategory_id_2']").click(function () {
+
+            $(".lb_size_gs input[name='classcategory_id_2']").parent().find(".box_mausac").css({ "border-color": "black" })
+            $(this).parent().find(".box_mausac").css({ "border-color": "red" })
+            $(".lb_size_gs input[name='classcategory_id_2']").removeAttr('checked')
+            $(this).attr('checked','true')
+        })
+        $(".lb_size_gs input[name='classcategory_id_1']").click(function () {
+            $(".lb_size_gs input[name='classcategory_id_1']").parent().find(".box_mausac").css({ "border-color": "black" })
+            $(this).parent().find(".box_mausac").css({ "border-color": "red" })
+            $(".lb_size_gs input[name='classcategory_id_1']").removeAttr('checked')
+            $(this).attr('checked', 'true')
+        })
+        $(function () {
+            $('.green_addtocart_btn').click(function () {
+                    $fl = true
+                $id = '@Model.Id';
+                $size = $('.lb_size_gs input[name="classcategory_id_2"]').parent().find('input[checked="checked"]').val()
+                if ($size == undefined) {
+                    $.notify("Chưa chọn size")
+                    $fl = false
+                }
+                $color = $('.lb_size_gs input[name="classcategory_id_1"]').parent().find('input[checked="checked"]').val()
+                if ($color == undefined) {
+                    $.notify("Chưa chọn màu")
+                    $fl = false
+                }
+                    $quantity = $('#quantity').val()
+                if ($quantity == 0) {
+                    $.notify("Số lượng không hợp lệ!")
+                    $fl = false
+                }
+
+                if ($fl) {
+                    $.ajax({
+                        url: '@Url.Action("AddCart","Cart")',
+                        type: 'post',
+                        data: {id:$id,size:$size,color:$color,quantity:$quantity,name:'@Model.name',amount:'@Model.prices',discount:'@Model.discount',image:'@Model.image[0]'},
+                        beforeSend: function () {
+                            showSpinLoadingShop();
+                        },
+
+                        success: function (data) {
+                            setTimeout(function () { hideSpinLoadingShop(); }, 500)
+                            $.notify("Thêm vào giỏ hàng thành công!", "success");
+                            setTimeout(function () { window.location.reload() },1000)
+                        },
+                        error: function () {
+                            $.notify("Có lỗi xảy ra!")
+                            setTimeout(function () { hideSpinLoadingShop();},1000)
+                        }
+                    })
+                }
+            })
+        })
+
+
+
+
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+            if (window.innerWidth > 768) {
+                var img = $("#xzoom-default").height();
+                $("#xzoom-thumbs").css({ "max-height": img + 'px', "overflow": "auto" })
+
+            }
+            else {
+
+                var img = $("#xzoom-default").width();
+                $("#xzoom-thumbs").css({ "max-width": img + 'px', "overflow": "auto", "white-space": "nowrap" })
+            }
+
+
+
+            jQuery('#xzoom-default').trigger("mouseover");
+            $('#size_sp_choose').click(function () {
+                $("#size_sp_click").animate({
+                    height: 'toggle'
+                });
+            });
+            $('#detail_sp_choose').click(function () {
+                $("#detail_sp_click").animate({
+                    height: 'toggle'
+                });
+            });
+            $('#guarantee_sp_choose').click(function () {
+                $("#guarantee_sp_click").animate({
+                    height: 'toggle'
+                });
+            });
+            $('#transport_sp_choose').click(function () {
+                $("#transport_sp_click").animate({
+                    height: 'toggle'
+                });
+            });
+            if ($('.out_of_product').val() == "true") {
+                $('#cartbtn_default a.addToCart_btn').css("background", "#999");
+                $('#cartbtn_default a.addToCart_btn').css("border", "none");
+                $('#cartbtn_default a.addToCart_btn').attr("onclick", "");
+            }
+
+
+
+        });
+
+
+
+
+    </script>
+    <script>
+
+        fbq('track', 'ViewContent', {
+            content_name: 'Đầm caro tay bèo',
+            content_category: 'VÁY ĐẦM',
+            content_ids: ['MS10874'],
+            content_type: 'product',
+            value: 220000.000000,
+            currency: 'VND'
+        });
+    </script>
+</div>

@@ -1,0 +1,1312 @@
+﻿@using ShopGumac.Models
+@model List<CartModel>
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from gumac.vn/cart by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 15:45:22 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <link rel="icon" type="image/vnd.microsoft.icon" href="/images/favicon.ico" />
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <title>Giỏ H&#224;ng</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+
+
+    <script src="/images/bootstrap.min.js"></script>
+    <link href="/images/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/images/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="/images/select2.css" rel="stylesheet" />
+    <script src="/images/select2.js"></script>
+    <script src="~/images/notify.js" type="text/javascript"></script>
+    <script src="/images/sweetalert2.js"></script>
+    <link href="/images/sweetalert2.css" rel="stylesheet" />
+    <script src="/images/alert.js"></script>
+    <script src="/images/common.js"></script>
+    <script src="/images/commonv2.js"></script>
+    <!--Ematic ByeIQ -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['EmaticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '/images/ematic.min.js', 'ematics');
+
+        var ematicApikey = "bfad636f559211e796c00242ac110002-sg7";
+        var opt = {
+            email: "",
+            country_iso: "vietnam",
+            currency_iso: "vnd",
+            language_iso: "vietnam"
+        };
+
+        //initialize
+        ematics("create", ematicApikey, opt);
+
+
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '/images/analytics.js', 'ga');
+        ga('create', 'UA-74435472-1', 'auto');
+        ga('send', 'pageview');
+        ga('require', 'ec');
+        ga('set', 'currencyCode', 'VND');
+    </script>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <link href="/images/blankstyle.css" rel="stylesheet" />
+    <link href="/images/webheaderstyle.css" rel="stylesheet" />
+    <link href="/images/webcartstyle202c.css?123" rel="stylesheet" />
+    <link href="/images/webproductdetailstyle.css" rel="stylesheet" />
+</head>
+<style>
+    .waiting-spin-content-web {
+        display: none;
+        background-color: rgba(255, 255, 255, .85);
+        bottom: 0;
+        color: #fff;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 9999;
+    }
+
+        .waiting-spin-content-web img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: 0 auto;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+        }
+
+    .waiting-spin-content-web-shop {
+        display: none;
+        background-color: rgba(255, 255, 255, .85);
+        bottom: 0;
+        color: #fff;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 9999;
+    }
+
+        .waiting-spin-content-web-shop img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: 0 auto;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+        }
+</style>
+<body>
+    <div>
+
+
+        <!-- iCheck -->
+        <link rel="stylesheet" href="/images/orangecustom.css">
+        <script src="/images/icheck.min.js"></script>
+        <link href="/images/all.css" rel="stylesheet" />
+        <style>
+                    .clear {
+                        clear: both;
+                    }
+
+                    /*#one_maincolumn {
+                margin: 0 auto;
+            }
+
+            .main_column {
+                padding: 10px 0 20px;
+            }
+
+            #undercolumn {
+                width: 100%;
+                margin: 0 0 30px 0;
+            }*/
+
+                    .point_announce_gs {
+                        margin-bottom: 30px;
+                        padding: 10px;
+                        border: solid 1px #ccc;
+                        background-color: #e6e6e6;
+                    }
+
+                    .center_gs {
+                        text-align: center;
+                    }
+
+                    #lg_cart {
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        color: #337ab7 !important;
+                    }
+
+                    div#undercolumn_cart p {
+                        margin: 1px 5px;
+                    }
+
+                    div#undercolumn_cart .totalmoney_area {
+                        margin-bottom: 20px;
+                    }
+
+
+                    .mypage_tt h4 {
+                        color: #333;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: block;
+                        font-size: 20px;
+                        margin: 10px 0;
+                        border-bottom: none !important;
+                    }
+
+                    div.form_area {
+                        margin-bottom: 30px;
+                    }
+
+                    .form_area table {
+                        margin: 15px auto 20px auto;
+                        border-top: 1px solid #ccc;
+                        border-left: 1px solid #ccc;
+                        width: 100%;
+                        border-collapse: collapse;
+                        text-align: left;
+                    }
+
+                        .form_area table th {
+                            padding: 8px;
+                            border-right: 1px solid #ccc;
+                            border-bottom: 1px solid #ccc;
+                            color: #333;
+                            background-color: #f0f0f0;
+                            font-weight: normal;
+                        }
+
+                        .form_area table td {
+                            padding: 8px;
+                            border-right: 1px solid #ccc;
+                            border-bottom: 1px solid #ccc;
+                        }
+
+                    .alignC {
+                        text-align: center;
+                    }
+
+                        .alignC img {
+                            height: 50px;
+                        }
+
+                    .alignR {
+                        text-align: right;
+                    }
+
+                    #total_value {
+                        text-align: right;
+                        border: none;
+                    }
+
+
+
+                    .tb_regist_gs {
+                        border-right: none !important;
+                        border-top: none !important;
+                        border-left: none !important;
+                    }
+
+                    table.tb_regist_gs th {
+                        background-color: transparent;
+                        color: #333;
+                        font-weight: bold;
+                        border-right: none !important;
+                        border-bottom: 1px dashed #ccc;
+                    }
+
+                    table.tb_regist_gs td {
+                        border-right: none !important;
+                        border-bottom: 1px dashed #ccc;
+                    }
+
+                    .attention {
+                        color: #f00;
+                    }
+
+                    .box60 {
+                        width: 60px;
+                    }
+
+                    .box300 {
+                        width: 300px;
+                    }
+
+                    .cus_info_new input[type='text'], .cus_info_new input[type='number'], input[type='password'], .select, textarea {
+                        border: solid 1px #ccc;
+                        padding: 5px;
+                        width: 100%;
+                        border-radius: 2px;
+                    }
+
+                    #btOrderProduct {
+                        float: right;
+                        background: #0089d1;
+                        color: #fff;
+                        font-size: 18px;
+                        border-radius: 4px;
+                        border: none;
+                        padding: 7px 20px;
+                    }
+
+                    .btagree_gs:hover {
+                        background: #232323;
+                        color: #FFF;
+                    }
+
+                    #ApplyPromotionBtn, #ApplyCustomerPointBtn {
+                        background: #949599;
+                        margin: 0 0 0 8px;
+                        width: 25%;
+                        padding: 9px 25px;
+                        border-radius: 2px;
+                        color: #fff;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                    }
+
+                    #PromotionCode, #CustomerPoint {
+                        padding: 6px;
+                        width: 73%;
+                        border-radius: 2px;
+                        border: 1px solid #ccc;
+                    }
+
+                    .waiting-spin-content {
+                        display: none;
+                        background-color: rgba(255, 255, 255, .85);
+                        bottom: 0;
+                        color: #fff;
+                        left: 0;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        z-index: 9999;
+                    }
+
+                        .waiting-spin-content img {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            margin: 0 auto;
+                            transform: translate(-50%, -50%);
+                            -ms-transform: translate(-50%, -50%);
+                            -webkit-transform: translate(-50%, -50%);
+                        }
+
+                    table select {
+                        margin-bottom: 7px;
+                        border: solid 1px #ccc;
+                    }
+
+                    .select2-hidden-accessible {
+                        border: 0 !important;
+                        clip: rect(0 0 0 0) !important;
+                        height: 1px !important;
+                        margin: -1px !important;
+                        overflow: hidden !important;
+                        padding: 0 !important;
+                        position: absolute !important;
+                        width: 1px !important;
+                    }
+
+                    .select2-container {
+                        box-sizing: border-box;
+                        display: inline-block;
+                        margin: 0;
+                        position: relative;
+                        vertical-align: middle;
+                        width: 100% !important;
+                    }
+
+                        .select2-container .select2-selection {
+                            background-color: #fff;
+                            border: 1px solid #E0E0E0;
+                            border-radius: 2px;
+                            padding: 2px 0px;
+                            height: auto;
+                            color: #E0E0E0;
+                        }
+
+                        .select2-container .select2-selection--single {
+                            box-sizing: border-box;
+                            cursor: pointer;
+                            display: block;
+                            height: 28px;
+                            user-select: none;
+                            -webkit-user-select: none;
+                        }
+
+                    .select2-container--default .select2-selection--single {
+                        background-color: #fff;
+                        border: 1px solid #E0E0E0;
+                        border-radius: 2px;
+                        padding: 2px 0px;
+                        height: auto;
+                        color: #E0E0E0;
+                    }
+
+                        .select2-container--default .select2-selection--single .select2-selection__rendered {
+                            height: 28px;
+                        }
+
+                    .btcancel_gs {
+                        float: left;
+                        margin-left: 8px;
+                    }
+
+                        .btcancel_gs, .btcancel_gs:hover {
+                            border: 1px solid #000;
+                            background: #fff;
+                            color: #000;
+                            padding: 6px 18px;
+                            font-size: 13px;
+                            margin: 10px 0 0 0;
+                            cursor: pointer;
+                            font-weight: normal;
+                            text-transform: uppercase;
+                            font: normal normal normal 13.3333330154419px/normal Arial;
+                        }
+
+                    input.promotionvalue {
+                        border: 0;
+                    }
+
+                    div#undercolumn .empty {
+                        text-align: left;
+                    }
+
+                    div#undercolumn_cart p {
+                        margin: 1px 5px;
+                    }
+
+                    .point_announce ul, .point_announce li {
+                        list-style: none;
+                    }
+
+                    div#undercolumn_cart .point_announce {
+                        padding: 20px;
+                        margin-bottom: 20px;
+                        border: solid 1px #ffcc62;
+                        background: #fffaf0;
+                        font-size: 1.05em;
+                        text-align: center;
+                        line-height: 140%;
+                    }
+
+                    @@media(max-width:767px) {
+                        .cus_info_new;
+
+                    {
+                        margin: 0;
+                    }
+
+                    .btagree_gs {
+                        float: none;
+                        width: 100%;
+                    }
+
+                    .btcancel_gs {
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    .promotionText {
+                        display: block;
+                    }
+
+                    #PromotionCode, #CustomerPoint {
+                        width: 45%;
+                    }
+
+                    table th.alignC {
+                        padding: 0;
+                    }
+                    }
+        </style>
+
+        <div>
+            <div id="one_maincolumn" class="main_column">
+                <div id="undercolumn">
+                    <div id="undercolumn_cart">
+                        <div class="clearfix"></div>
+
+                        <div style="overflow:auto;">
+                            <div class="col-md-7">
+                                <!-- Customer Cart -->
+                                
+                                <div class="customer_cart">
+                                    <div class="cart_header">
+                                        <a href="index.html">
+                                            <img style="padding:5px 0;" width="220px" src="/images/logo_new.jpg" alt="GUMAC" title="GUMAC" />
+                                        </a>
+                                    </div>
+                                    <div class="cart_breadcrumb">
+                                        <a href="cart.html">Giỏ hàng</a>&nbsp;&nbsp;<span><i class="fa fa-caret-right" aria-hidden="true"></i></span>&nbsp;&nbsp;Thông tin đơn hàng
+                                    </div>
+                                    <p class="empty"><span class="attention" style="display: none">* Giỏ hàng trống.  </span></p>
+                                    @if (Session["cart"] != null)
+                                    {
+                                        <div class="cus_info_new">
+                                            <div class="mypage_tt">
+                                                <h4>Thông tin giao hàng</h4>
+                                            </div>
+                                            <div class="clear"></div>
+
+                                            <div>
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Họ &amp; Tên" name="CustomerName" id="CustomerName" maxlength="160" style="" onblur="updateCus()">
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" placeholder="Email" name="Email" id="Email" onblur="updateCus()">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" placeholder="Điện thoại" name="PhoneNumber" id="PhoneNumber" maxlength="40" style="ime-mode: disabled;" onblur="updateCus()">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Địa chỉ" name="Address" id="Address" style="" onblur="updateCus()">
+                                                </div>
+
+                                                @*<div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+
+
+                                <select class="form-control .select2-hidden-accessible select2-hidden-accessible" id="ProvinceID" name="ProvinceID" onchange="onProvinceIDChange(this)" tabindex="-1" aria-hidden="true">
+                                    <option value="">--Chọn Tỉnh Thành--</option>
+                                    <option value="HN">Hà Nội</option>
+                                    <option value="SG">Hồ Chí Minh</option>
+                                    <option value="AG">An Giang</option>
+                                    <option value="BD">Bình Dương</option>
+                                    <option value="BDD">Bình Định</option>
+                                    <option value="BG">Bắc Giang</option>
+                                    <option value="BK">Bắc Kạn</option>
+                                    <option value="BL">Bạc Liêu</option>
+                                    <option value="BN">Bắc Ninh</option>
+                                    <option value="BP">Bình Phước</option>
+                                    <option value="BTH">Bình Thuận </option>
+                                    <option value="BTR">Bến Tre</option>
+                                    <option value="CB">Cao Bằng</option>
+                                    <option value="CM">Cà Mau</option>
+                                    <option value="CT">Cần Thơ</option>
+                                    <option value="DDB">Điện Biên</option>
+                                    <option value="DDL">Đắk Lắk</option>
+                                    <option value="DDN">Đà Nẵng</option>
+                                    <option value="DDT">Đồng Tháp</option>
+                                    <option value="DNA">Đồng Nai</option>
+                                    <option value="DNO">Đắk Nông</option>
+                                    <option value="GL">Gia Lai</option>
+                                    <option value="HB">Hòa Bình</option>
+                                    <option value="HD">Hải Dương</option>
+                                    <option value="HG">Hà Giang</option>
+                                    <option value="HGI">Hậu Giang</option>
+                                    <option value="HNA">Hà Nam</option>
+                                    <option value="HP">Hải Phòng</option>
+                                    <option value="HT">Hà Tĩnh</option>
+                                    <option value="HY">Hưng Yên</option>
+                                    <option value="KG">Kiên Giang</option>
+                                    <option value="KH">Khánh Hòa</option>
+                                    <option value="KT">Kon Tum</option>
+                                    <option value="LA">Long An</option>
+                                    <option value="LCA">Lào Cai</option>
+                                    <option value="LCH">Lai Châu</option>
+                                    <option value="LDD">Lâm Đồng</option>
+                                    <option value="LS">Lạng Sơn</option>
+                                    <option value="NA">Nghệ An</option>
+                                    <option value="NB">Ninh Bình</option>
+                                    <option value="NDD">Nam Định</option>
+                                    <option value="NT">Ninh Thuận</option>
+                                    <option value="PT">Phú Thọ</option>
+                                    <option value="PY">Phú Yên</option>
+                                    <option value="QB">Quảng Bình</option>
+                                    <option value="QNA">Quảng Nam</option>
+                                    <option value="QNG">Quảng Ngãi</option>
+                                    <option value="QNI">Quảng Ninh</option>
+                                    <option value="QT">Quảng Trị</option>
+                                    <option value="SL">Sơn La</option>
+                                    <option value="ST">Sóc Trăng</option>
+                                    <option value="TB">Thái Bình</option>
+                                    <option value="TG">Tiền Giang</option>
+                                    <option value="TH">Thanh Hóa</option>
+                                    <option value="TN">Thái Nguyên</option>
+                                    <option value="TNI">Tây Ninh</option>
+                                    <option value="TQ">Tuyên Quang</option>
+                                    <option value="TTH">Thừa Thiên Huế</option>
+                                    <option value="TV">Trà Vinh</option>
+                                    <option value="VL">Vĩnh Long</option>
+                                    <option value="VP">Vĩnh Phúc</option>
+                                    <option value="VT">Bà Rịa Vũng Tàu</option>
+                                    <option value="YB">Yên Bái</option>
+                                </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 219px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-ProvinceID-container"><span class="select2-selection__rendered" id="select2-ProvinceID-container" title="--Chọn Tỉnh Thành--">--Chọn Tỉnh Thành--</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-inline" id="DistrictContainer">
+
+
+
+
+                                    <select class="form-control select2-hidden-accessible" id="DistrictID" name="DistrictID" tabindex="-1" aria-hidden="true">
+                                        <option selected="selected" value="">--Chọn Quận/Huyện--</option>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 183px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-DistrictID-container"><span class="select2-selection__rendered" id="select2-DistrictID-container" title="--Chọn Quận/Huyện--">--Chọn Quận/Huyện--</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-inline " id="WardContainner">
+
+
+
+
+
+                                    <select class="form-control select2-hidden-accessible" id="WardID" name="WardID" tabindex="-1" aria-hidden="true">
+                                        <option selected="selected" value="">--Chọn Xã/Phường--</option>
+                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 177px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-WardID-container"><span class="select2-selection__rendered" id="select2-WardID-container" title="--Chọn Xã/Phường--">--Chọn Xã/Phường--</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                                                @*<div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="number" placeholder="Chiều cao (cm)" name="CustomerHeight" id="CustomerHeight" value="" style="" onblur="updateCus()">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="number" placeholder="Cân nặng (kg)" name="CustomerWeight" id="CustomerWeight" value="" style="" onblur="updateCus()">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input type="number" placeholder="Vòng eo (cm)" name="CustomerWaistSize" id="CustomerWaistSize" value="" style="" onblur="updateCus()">
+                            </div>
+                        </div>
+                    </div>*@
+                                                <div class="form-group">
+                                                    <textarea placeholder="Ghi chú" name="NoteCSKH" id="NoteCSKH"></textarea>
+
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                            <script type="text/javascript">
+                                                var districtID = "";
+                                                var wardId = "";
+
+                                                function onProvinceIDChange(e) {
+                                                    $('#WardID').select2();
+                                                    $.ajax({
+                                                        url: "/ComponentWeb/DistrictdSelect",
+                                                        data: { proviceID: $(e).val(), selected: districtID },
+                                                        success: function (data) {
+                                                            $("#DistrictContainer").html(data);
+                                                            $('#DistrictID').select2();
+                                                            $("#DistrictID").change(function () {
+                                                                var datadis = $('#DistrictID').select2('data');
+                                                                if (datadis.length > 0) {
+                                                                    updateShip(233750.000000, $(e).val(), datadis[0].id);
+                                                                }
+
+                                                                onDistrictIDChange();
+                                                            });
+                                                            if (districtID != null && districtID != "") {
+                                                                $('#DistrictID').trigger("change");
+                                                            }
+                                                            updateCus();
+                                                        }
+                                                    });
+                                                }
+
+                                                function onDistrictIDChange(e) {
+                                                    $.ajax({
+                                                        url: "/ComponentWeb/WardSelect",
+                                                        data: { districtID: $("#DistrictID").val(), selected: wardId },
+                                                        success: function (data) {
+                                                            updateCus();
+                                                            $("#WardContainner").html(data);
+                                                            $('#WardID').select2();
+                                                            $("#WardID").on("change", function (e) {
+                                                                updateCus();
+                                                            });
+                                                        }
+                                                    });
+                                                }
+                                            </script>
+                                            <div class="status_order">
+                                                <p>
+                                                    <label style="display:block;">
+
+                                                        ĐƠN HÀNG CỦA QUÝ KHÁCH SẼ ĐƯỢC TỰ ĐÔNG GỬI KHI HOÀN TẤT ĐƠN HÀNG,QUÝ KHÁCH VUI LÒNG KIỂM TRA LẠI THÔNG TIN ĐƠN HÀNG CHÍNH XÁC TRƯỚC KHI BẤM HOÀN TẤT.<br> XIN CÁM ƠN!
+                                                        <span class="pull-right hidden">
+                                                            <div class="icheckbox_minimal-orangecustom checked" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" id="ckbAdvice" class="minimal" name="chooseStatus" value="1" data-sub_id="104" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                        </span>
+                                                    </label>
+                                                </p>
+
+                                                <input type="hidden" name="StatusID" value="1">
+                                                <input type="hidden" name="SubStatusID" value="104">
+                                            </div>
+
+                                            <div class="attention">
+                                                <p><span style="font-size: 18px;"><i class="fa fa-check-square" aria-hidden="true"></i></span> HÀNG ĐỒNG GIÁ KHÔNG HỖ TRỢ ĐỔI HÀNG</p>
+                                                <p><span style="font-size: 18px;"><i class="fa fa-check-square" aria-hidden="true"></i></span> ÁP DỤNG GIAO HÀNG CHO ĐƠN HÀNG TRÊN 150K</p>
+
+                                            </div>
+
+                                            <a href="/cart" style="">Giỏ hàng</a>
+                                            <input type="hidden" name="cartKey" value="1">
+                                            <button class="btagree_gs" id="btOrderProduct" onclick="saveOrder();" style="">Hoàn tất đơn hàng</button>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    }
+
+                                </div>
+                                
+
+                            </div>
+                            @if (Session["cart"] != null)
+                            {
+                                <div class="col-md-5 grey_cart" style="min-height: 626px;">
+                                    <div id="list-cart-home" class="cart_items">
+                                        <div id="item_in_cart">
+
+
+                                            <style>
+                                                #info-icon-cart .top-cart-header .list-gif {
+                                                    display: none !important;
+                                                }
+
+                                                .list-gif li label {
+                                                    font-weight: normal;
+                                                }
+                                            </style>
+
+                                            <div class="cart_item">
+                                                @if (Session["cart"] != null)
+                                                {
+                                                    foreach (var item in (List<CartModel>)Session["cart"])
+                                                    {
+                                                    <div class="row">
+                                                        <div class="col-xs-3">
+                                                            <div class="cart_item_img">
+                                                                <img src="~/images/@item._image" width="100%" alt="Chân váy hoa">
+                                                                <span class="cart_item_quantity">
+                                                                    @item._quantity
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <p class="cart_item_name">@item.name</p>
+                                                            <p class="cart_item_standard">Màu: @item._color</p>
+                                                            <p class="cart_item_standard">Size: @item._size</p>
+                                                            <p class="cart_item_price">
+                                                                @item._prices.ToString("#,#.00") đ
+                                                            </p>
+                                                            <a class="cart_item_del pull-right" style="padding:0 !important;" href="javascript:addCart('CV10873_XDEN_XS', -1,true)">
+                                                                <input type="hidden" name="id_product" value="@item.ids" />
+                                                                <img width="25px" src="/images/thungrac-01.png" alt="GUMAC" title="GUMAC">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    }
+                                                }
+
+
+
+                                            </div>
+
+                                            <script>
+                                                $(".cart_num").html(1);
+                                                $(".numberCart").html(1);
+                                            </script>
+                                        </div>
+                                        <div class="cart_item">
+
+
+                                            <div class="attention">
+                                                <b>Lưu ý: VCSN chỉ áp dụng cho đơn hàng giá niêm yết tối đa 2 triệu. Phần tiền dư sẽ được cộng vào nguyên giá.</b>
+                                            </div>
+                                            <input type="text" name="ma" id="PromotionCode" value="" placeholder="Nhập mã voucher">
+                                            <a class="btagree_gs" id="ApplyPromotionBtn" onclick="applyPromotionCodeCart(); return false;" style="cursor:pointer">Áp dụng</a>
+
+
+                                        </div>
+
+
+                                        <div class="cart_item">
+                                            <div class="price_cart">
+                                                <div class="price_title_cart">Tạm tính</div>
+                                                <div class="price_content_cart" id="TotalCart">@ViewBag.price.ToString("#,#.00") đ</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="cart_item">
+                                            <div class="price_cart">
+                                                <div class="price_title_cart">Phí ship</div>
+                                                <div class="price_content_cart" id="OrderShip">0 đ</div>
+                                                <input class="hidden" id="TotalShip">
+                                            </div>
+                                        </div>
+                                        <div class="cart_item">
+                                            <div class="price_cart">
+                                                <div class="price_title_cart">Khuyến mãi</div>
+                                                <div class="row-discount-cart-item vourcher-code-cart price_content_cart">
+                                                    <span class="total-sale">0 đ</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="cart_item hidden">
+                                            <div class="price_cart">
+                                                <div class="price_title_cart">Điểm tích lũy</div>
+                                                <div class="price_content_cart">
+                                                    <span id="discount-point">0 đ</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="cart_item">
+                                            <div class="price_cart">
+                                                <div class="price_title_cart">Tổng cộng</div>
+                                                <div class="price_content_cart">
+                                                    <div class="row-discount-cart-item row-payment-total">
+                                                        <span class="payment">@ViewBag.price.ToString("#,#.00") đ</span>
+                                                        <input type="hidden" id="totalBillValue" value="233750">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            }
+
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var products = [];
+        ematics("log", "product", "cart", products);
+        ematics("log", "product", "checkout", products);
+        //--------End Ematics-----------
+    </script>
+
+
+    <script>
+
+
+        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+            checkboxClass: 'icheckbox_minimal-orangecustom',
+            radioClass: 'iradio_minimal-orangecustom'
+        });
+
+        $("[name=chooseStatus]").on('ifChecked', function (event) {
+            //$("[name=chooseStatus]").iCheck('uncheck');
+            //$(this).iCheck('check');
+
+            var statusID = $(this).val();
+            var subStatusID = $(this).attr("data-sub_id");
+
+
+            $("[name=StatusID]").val(statusID);
+            $("[name=SubStatusID]").val(subStatusID);
+        });
+        $("[name=chooseStatus]").on('ifUnchecked', function (event) {
+
+            var statusID = 1;
+            var subStatusID = 247;
+
+
+            $("[name=StatusID]").val(statusID);
+            $("[name=SubStatusID]").val(subStatusID);
+        });
+
+        $(document).ready(function () {
+
+            updateShip(0, '', '');
+            $('#ProvinceID').select2().on('change', function () {
+                var data = $('#ProvinceID').select2('data');
+                if (data.length > 0) {
+
+                    updateShip(0, data[0].id, "");
+
+                }
+            });
+            onProvinceIDChange(document.getElementById("ProvinceID"));
+            onDistrictIDChange(document.getElementById("DistrictID"));
+
+            var h = $(window).innerHeight();
+            $(".grey_cart").css({ "min-height": h });
+
+            $("#WardID").on("change", function (e) {
+                updateCus();
+            });
+
+
+        });
+        function updateCus() {
+
+            var fd = new FormData(document.getElementById("formOrder"));
+            $.ajax({
+                url: "/Cart/Updatecus",
+                type: "POST",
+                data: fd,
+                enctype: 'multipart/form-data',
+                processData: false,  // tell jQuery not to process the data
+                contentType: false,   // tell jQuery not to set contentType
+                success: function (data) {
+                    // alert(data.Code)
+                }
+            });
+
+        }
+        function updateShip(totalcart, provinceID, districtID) {
+            if (provinceID == "" && districtID == "") {
+                $('#TotalShip').val(0);
+
+            } else
+                if (totalcart < 500000) {
+                    if (provinceID != "" && districtID == "") {
+                        if (provinceID != "SG") {
+
+                            $('#TotalShip').val(20000);
+                        }
+                        else {
+                            //  $('#OrderShip').html("0 đ");
+                            $('#TotalShip').val(0);
+                        }
+                    }
+                    else if (provinceID != "" && districtID != "") {
+                        if (provinceID == "SG") {
+
+
+                            if (districtID == "61" || districtID == "64" || districtID == "65" || districtID == "71" || districtID == "72" || districtID == "73" || districtID == "74" || districtID == "75" || districtID == "76") {
+                                $('#TotalShip').val(10000);
+
+                            }
+                            else {
+                                $('#TotalShip').val(0);
+                            }
+
+
+                        }
+                        else {
+                            if (districtID == "39" || districtID == "40" || districtID == "537" || districtID == "97" || districtID == "552" || districtID == "52" || districtID == "358" || districtID == "524" || districtID == "173" || districtID == "360" || districtID == "348" || districtID == "543") {
+                                $('#TotalShip').val(50000);
+                            }
+                            else {
+                                $('#TotalShip').val(20000);
+                            }
+                        }
+                    }
+
+                }
+                else {
+                    $('#TotalShip').val(0);
+                }
+            var ship = $('#TotalShip').val();
+            $.ajax({
+                url: "/Cart/UpdateTotalShip",
+                data: { totalship: parseInt(ship) },
+                method: "POST",
+                success: function (data) {
+
+                    if (data.Code == 1) {
+                        $('#OrderShip').html(showMoney(data.Ship) + " đ");
+                        $(".payment").html(showMoney(data.TotalBillNew) + " đ");
+                        $("#totalBillValue").val(data.TotalBillNew);
+                    }
+                    else {
+                        showError("Thất bại", data.Message);
+                    }
+
+                },
+            });
+        }
+
+        //-----------GA-----------
+        ga('ec:setAction', 'checkout', {
+            'step': 1,            // A value of 1 indicates this action is first checkout step.
+            'option': 'COD'      // Used to specify additional info about a checkout stage, e.g. payment method.
+        });
+        ga('send', 'pageview');
+        //-----------End GA-----------
+
+        var lstItemInCart = [];
+        function saveOrder() {
+            var name = $('#CustomerName').val()
+            var email = $('#Email').val()
+            var add = $('#Address').val()
+            var note = $('#NoteCSKH').val()
+
+            $.ajax({
+                url: '@Url.Action("BuyProduct","Cart")',
+                type: 'post',
+                data: { name, email, add, note },
+                beforeSend: function () {
+                    showSpinLoading()
+                },
+                success: function () {
+                    hideSpinLoading()
+                    setTimeout(function () { window.location.reload() }, 500)
+                },
+                error: function () {
+                    hideSpinLoading()
+                }
+                    
+            })
+        }
+        function validateCart() {
+            if ($('#PhoneNumber').val() == "") {
+                showError("Lỗi", "Bạn chưa nhập số điện thoại");
+                return false;
+            }
+            var regex = /^[0-9]+$/;
+            if (!regex.test($('#PhoneNumber').val()) || $('#PhoneNumber').val().length < 10) {
+                showError("Lỗi", "Số điện thoại không đúng định dạng");
+                return false;
+            }
+            if ($('#CustomerName').val() == "") {
+                showError("Lỗi", "Bạn chưa nhập họ tên");
+                return false;
+            }
+            if ($('#Address').val() == "") {
+                showError("Lỗi", "Bạn chưa nhập địa chỉ");
+                return false;
+            }
+            if ($('#ProvinceID').val() == "") {
+                showError("Lỗi", "Bạn chưa chọn tỉnh thành");
+                return false;
+            }
+            if ($('#DistrictID').val() == "") {
+                showError("Lỗi", "Bạn chưa chọn quận huyện");
+                return false;
+            }
+            if ($('#Address').val() == "") {
+                showError("Lỗi", "Bạn chưa nhập địa chỉ");
+                return false;
+            }
+            return true;
+
+        }
+        function resetForm() {
+            document.getElementById("formOrder").reset();
+        }
+
+
+    </script>
+
+    <!-- Start Criteo Basket tag -->
+    <script type="text/javascript" src="/images/ld.js" async="true"></script>
+    <script type="text/javascript">
+        var deviceType = (window.innerWidth <= 767) ? 'm' : (window.innerWidth >= 980) ? 'd' : 't';
+
+
+        window.criteo_q = window.criteo_q || [];
+        window.criteo_q.push(
+            { event: "setAccount", account: 42493 },
+            { event: "setSiteType", type: deviceType },
+            { event: "setEmail", email: "" },
+            {
+                event: "viewBasket", item: [
+
+                    /* add a line for each product in the user's basket */
+                ]
+            });
+
+    </script>
+    <!-- End Criteo Basket tag -->
+    <script>
+        $(".cart_num").html(0);
+        $(".numberCart").html(0);
+
+        $(".GifSelect").on("change", function () {
+            var id = $(this).attr("data-id");
+            var selectMode = $(this).val();
+            var discount = $(this).attr("discount-amount");
+            $.ajax({
+                method: "POST",
+                url: "/Cart/UpdateGifCart",
+                data: { idGif: id, mode: selectMode, discount: discount },
+                success: function (data) {
+                    $(".value-payment").html(showMoney(data.TotalBill) + " đ");
+                    if (selectMode == "money") {
+
+                        $('.vaulue-discount-combo').html(showMoney(discount) + " đ")
+                    }
+                    else {
+                        $('.vaulue-discount-combo').html(0 + " đ")
+                    }
+                }
+            })
+        });
+        function applyPromotionCodeCart() {
+            var promotionCode = $("#PromotionCode").val();
+
+            if (promotionCode == "") {
+                swal("Bạn chưa nhập mã khuyến mãi");
+                return;
+            }
+            else {
+                $.ajax({
+                    url: "/Cart/ApplyPromotionCode",
+                    data: { PromotionCode: promotionCode },
+                    method: "POST",
+                    success: function (data) {
+                        $('#PromotionCodeHidden').val(promotionCode);
+                        if (data.Code == 1) {
+                            loadItemInCart();
+                            showSuccess("Thành Công", data.Message);
+                            $('.vourcher-code-cart').css("display", "block");
+                            $('#TotalCart').html(showMoney(data.TotalCart) + " đ");
+                            $('.total-sale').html(showMoney(data.PromoTotal) + " đ");
+                            $(".payment").html(showMoney(data.TotalBillNew) + " đ");
+                            $("#totalBillValue").val(data.TotalBillNew);
+                            $("#PromotionCode").attr("readonly", "readonly");
+                            $("#ApplyPromotionBtn").html("Xóa");
+                            $("#ApplyPromotionBtn").attr("onclick", "removePromotionCode();");
+                        }
+                        else {
+                            showError("Thất bại", data.Message);
+                            $("#PromotionCode").val("");
+                        }
+
+                    },
+                });
+            }
+        }
+        function removePromotionCode() {
+            var promotionCode = $("#PromotionCode").val();
+            $.ajax({
+                url: "/Cart/RemovePromotionCode",
+                data: { PromotionCode: promotionCode },
+                method: "POST",
+                success: function (data) {
+                    if (data.Code == 1) {
+                        loadItemInCart();
+                        $('.total-sale').html(0 + " đ");
+                        $('#TotalCart').html(showMoney(data.TotalCart) + " đ");
+                        $(".payment").html(showMoney(data.TotalBillNew) + " đ");
+                        $("#totalBillValue").html(data.TotalBillNew);
+                        $('#PromotionCodeHidden').val('');
+                        $("#PromotionCode").removeAttr("readonly");
+                        $("#PromotionCode").val('');
+                        $("#ApplyPromotionBtn").html("Áp dụng");
+                        $("#ApplyPromotionBtn").attr("onclick", "applyPromotionCodeCart();");
+                        $("#ApplyPromotionBtn").removeClass("bg-grey-custom");
+                        $("#ApplyPromotionBtn").css("color", "white");
+                    }
+                    else {
+                        showError("Thất bại", data.Message);
+                    }
+                },
+            });
+
+        }
+        function addCart(productID, quantity, callback, note) {
+            $.ajax({
+                type: "POST",
+                url: '/cart/addcart',
+                data: { productID: productID, quantity: quantity, note: note },
+                beforeSend: function () {
+                    showSpinLoading();
+                },
+                success: function (data) {
+                    hideSpinLoading();
+                    if (data.Code === 1) {
+                        window.location.href = "cart.html";
+
+                    } else {
+                        showError('Lỗi', data.message);
+                    }
+                }
+            });
+        }
+
+        function addSetToCart(setId, quantity, arrayProducts, callback, note) {
+            $.ajax({
+                type: "POST",
+                url: '/cart/addsettocart',
+                data: {
+                    setId: setId,
+                    quantity: quantity,
+                    listproduct: arrayProducts,
+                    note: note
+                },
+                beforeSend: function () {
+                    //ematics("log", "product", "cart", products);
+                    showSpinLoading();
+                },
+                success: function (data) {
+                    if (data.Code == 1) {
+                        window.location.href = "cart.html";
+                    } else {
+                        showError("Lỗi", data.message);
+                    }
+                }
+            })
+        }
+
+        function loadItemInCart() {
+            $.ajax({
+                type: "POST",
+                url: '/Cart/TopCartView',
+            }).success(function (data) {
+                $("#item_in_cart").html(data);
+            });
+
+            return false;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="waiting-spin-content-web">
+    <img src="/images/loading.gif" alt="GUMAC" title="GUMAC" />
+</div>
+<div class="waiting-spin-content-web-shop">
+    <img src="/images/shop-loading.gif" alt="GUMAC" title="GUMAC" />
+</div>
+<script>
+    function showSpinLoading() {
+        $(".waiting-spin-content-web").css({ "display": "block" });
+    }
+
+    function hideSpinLoading() {
+        $(".waiting-spin-content-web").css({ "display": "" });
+    }
+
+    function showSpinLoadingShop() {
+        $(".waiting-spin-content-web-shop").css({ "display": "block" });
+    }
+
+    function hideSpinLoadingShop() {
+        $(".waiting-spin-content-web-shop").css({ "display": "" });
+    }
+
+</script>
+</body>
+
+<!-- Mirrored from gumac.vn/cart by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Oct 2018 15:45:44 GMT -->
+</html>
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "/images/sdk.js#xfbml=1&version=v2.10&appId=350143588661551";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '/images/analytics.js', 'ga');
+    ga('create', 'UA-74435472-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script>
+    $(function () {
+        $('.cart_item_del').click(function(){
+            $id_product = $(this).find("input[name='id_product']").val()
+             $.ajax({
+                        url: '@Url.Action("subCart","Cart")',
+                        type: 'post',
+                        data: {id: $id_product},
+                        beforeSend: function () {
+                            showSpinLoading();
+                        },
+                 success: function (data) {
+                            setTimeout(function () { hideSpinLoading(); }, 500)
+                            $.notify(`Đặt hàng thành công`, "success");
+                            setTimeout(function () { window.location.reload() }, 1000)
+                        },
+                 error: function () {
+                     $.notify("Có lỗi xảy ra!")
+                     setTimeout(function () { hideSpinLoading(); }, 1000)
+                        }
+                    })
+        })
+    })
+
+</script>

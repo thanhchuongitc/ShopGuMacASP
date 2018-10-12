@@ -1,0 +1,106 @@
+.WnMar p{margin:10px 0 5px 0;display:inline-block;color:#555;line-height:1.5;}
+.WnMar p a{text-transform:uppercase;font-size:15px;color:#333;float:left;display:inline-block;border-right:1px solid #666;line-height:15px;padding:0 10px 0 0;}
+.WnMar p a:nth-child(2){border-right:none;padding:0 10px;font-family:'AvantGardeBold';}
+.WnMar p a:hover{text-decoration:none;color:#333;}
+.slideshow_content{float:left;margin:10px 0 0 0;width:100%;cursor:pointer;}
+#slideshow{position:relative;height:430px;height:508px;z-index:-1;}
+#slideshow img{position:absolute;top:0;left:0;z-index:8;width:100%;}
+#slideshow img.active{z-index:10;}
+#slideshow img.last-active{z-index:9;}
+.saleOff{text-align:center;margin:10px 0 7px 0;overflow:auto;}
+.saleOff img{width:100%;}
+.feature1{overflow:auto;}
+.feature1 .itemsFeature{width:33.3%;float:left;}
+.feature1 .itemsFeature:nth-child(1){padding-right:2%;}
+.feature1 .itemsFeature:nth-child(2){padding-left:1%;padding-right:1%;}
+.feature1 .itemsFeature:nth-child(3){padding-left:2%;}
+.feature1 .itemsFeature h3{text-align:center;font-family:'AvantGardeDemiBold';font-size:22px;color:#333;font-weight:400;text-transform:uppercase;margin:10px 0 5px 0;letter-spacing:1px;}
+.feature1 .itemsFeature>a{text-align:center;display:block;color:#333;text-transform:uppercase;font-size:13px;}
+.feature1 .itemsFeature>a.more:after{content:'';border-left:6px solid #111;border-right:5px solid rgba(0, 0, 0, 0);border-bottom:4px solid rgba(0, 0, 0, 0);width:0px;height:0px;border-top:4px solid rgba(0, 0, 0, 0);display:inline-block;margin:0 0 0 5px;}
+.itemsFeature img{width:100%;}
+.ProductHome{margin:0px 0 15px 0;}
+.ProductHome>h3{text-align:center;border-top:1px solid #000;line-height:27px;margin-bottom:20px;}
+.ProductHome>h3>span{background:#000;color:#FFF;padding:3px 60px 4px;font-weight:400;font-size:20px;text-transform:uppercase;}
+.ProductHome .product_item .productImage a{width:100%;height:238px;position:relative;line-height:0;display:inline-block;}
+.ProductHome .product_item .productImage a img{position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;max-width:100%;max-height:100%;}
+.ProductHome .product_item a.more:hover{color:#666;text-decoration:none;}
+.ProductHome .product_item a.more{text-align:center;display:block;color:#333;text-transform:uppercase;font-size:13px;margin:10px 0 0 0;}
+.ProductHome .product_item a.more:after{content:'';border-left:6px solid #111;border-right:5px solid rgba(0, 0, 0, 0);border-bottom:4px solid rgba(0, 0, 0, 0);width:0px;height:0px;border-top:4px solid rgba(0, 0, 0, 0);display:inline-block;margin:0 0 0 5px;}
+.news_header h3{text-align:center;border-top:1px solid #000;line-height:27px;margin-bottom:20px;}
+.news_header h3>span{background:#000;color:#FFF;padding:3px 60px 4px;font-weight:400;font-size:20px;text-transform:uppercase;}
+.jssorb01{position:absolute;}
+.jssorb01 div,
+.jssorb01 div:hover,
+.jssorb01 .av{position:absolute;width:12px;height:12px;filter:alpha(opacity=70);opacity:.7;overflow:hidden;cursor:pointer;border:#000 1px solid;}
+.jssorb01 div{background-color:gray;}
+.jssorb01 div:hover,
+.jssorb01 .av:hover{background-color:#d3d3d3;}
+.jssorb01 .av{background-color:#fff;}
+.jssorb01 .dn,
+.jssorb01 .dn:hover{background-color:#555555;}
+.jssora05l,
+.jssora05r{display:block;position:absolute;width:40px;height:40px;cursor:pointer;background:url(https://gumac.vn/content/Image/a02.png) no-repeat;overflow:hidden;}
+.jssora05l{background-position:-10px -40px;}
+.jssora05r{background-position:-70px -40px;}
+.jssora05l:hover{background-position:-130px -40px;}
+.jssora05r:hover{background-position:-190px -40px;}
+.jssora05l.jssora05ldn{background-position:-250px -40px;}
+.jssora05r.jssora05rdn{background-position:-310px -40px;}
+.jssorb01{bottom:26px;left:47%;}
+#jssora21r{top:45% !important;right:8px;display:block !important;}
+#jssora21l{top:45% !important;left:8px;display:block !important;}
+#paging_slide{bottom:26px;left:47%;}
+#slider_content{cursor:move;position:absolute;left:0px;top:0px;width:100%;height:500px;overflow:hidden;}
+.img_slider_rec{margin:0 0 0 20px;padding:0 20px;}
+.img_slider_rec img{width:100%;border:1px solid #ccc;}
+.img_slider_rec a.more{color:#fff;text-transform:uppercase;}
+.img_slider_rec a.more:hover{color:#fff;text-decoration:none;}
+.img_slider_rec a.more{text-align:center;display:block;color:#fff;text-transform:uppercase;font-size:13px;margin:10px 0 0 0;background:#000;padding:4px 0;}
+.img_slider_rec a.more:after{content:'';border-left:6px solid #111;border-right:5px solid rgba(0, 0, 0, 0);border-bottom:4px solid rgba(0, 0, 0, 0);width:0px;height:0px;border-top:4px solid rgba(0, 0, 0, 0);display:inline-block;margin:0 0 0 5px;}
+#slider5_l{top:45% !important;left:0 !important;display:block !important;}
+#slider5_r{top:45% !important;right:36px !important;display:block !important;}
+#slider_main .jssorb01{position:absolute;}
+#slider_main .jssorb01 div,
+#slider_main .jssorb01 div:hover,
+#slider_main .jssorb01 .av{position:absolute;width:12px;height:12px;filter:alpha(opacity=70);opacity:.7;overflow:hidden;cursor:pointer;border:#000 1px solid;}
+#slider_main .jssorb01 div{background-color:gray;}
+#slider_main .jssorb01 div:hover,
+.jssorb01 .av:hover{background-color:#d3d3d3;}
+#slider_main .jssorb01 .av{background-color:#fff;}
+#slider_main .jssorb01 .dn,
+.jssorb01 .dn:hover{background-color:#555555;}
+#slider_main .jssora13l,
+#slider_main .jssora13r{display:block;position:absolute;width:40px;height:50px;cursor:pointer;background:url(https://gumac.vn/content/Image/a02.png) no-repeat;overflow:hidden;}
+#slider_main .jssora13l{background-position:-10px -35px;}
+#slider_main .jssora13r{background-position:-70px -35px;}
+#slider_main .jssora13l:hover{background-position:-130px -35px;}
+#slider_main .jssora13r:hover{background-position:-190px -35px;}
+#slider_main .jssora13l.jssora13ldn{background-position:-250px -35px;}
+#slider_main .jssora13r.jssora13rdn{background-position:-310px -35px;}
+#slider_main .jssora13l.jssora13lds{background-position:-10px -35px;opacity:.3;pointer-events:none;}
+#slider_main .jssora13r.jssora13rds{background-position:-70px -35px;opacity:.3;pointer-events:none;}
+@media (max-width:767px){.WnMar{display:none;}
+#slideshow{position:relative;height:130px;}
+.slideshow_content{border-top:2px solid #111;margin:0 0 10px 0;}
+.feature1 .itemsFeature h1{font-size:16px;height:20px;height:50px;}
+#news_area div.newslist{width:100%;float:left;text-align:center;overflow:hidden;padding:0 10px;}
+.main_column #recommend_area .product_item{float:left;width:50%;padding-left:1%;padding-right:1%;}
+.main_column #recommend_area .product_item .productImage{}
+.ProductHome .product_item .productImage a img{position:relative;}
+.ProductHome>h1>span{background:#000;color:#FFF;padding:3px 30px 4px;font-weight:400;font-size:16px;text-transform:uppercase;}
+.fashion_content .grid-50{width:100%;}
+.fashion_content .grid-50 img{width:100%;}
+.slide_fashion{padding-left:0px;margin-top:15px;}
+.img_fashion{padding-right:0px;}
+.feature1 .itemsFeature{width:100%;float:left;margin-bottom:10px;}
+.feature1 .itemsFeature:nth-child(1){padding-right:0;}
+.feature1 .itemsFeature:nth-child(2){padding-left:0;padding-right:0;}
+.feature1 .itemsFeature:nth-child(3){padding-left:0;}
+.newslist img{height:367px;}
+.img_slider_rec{margin:0 0px;padding:0 40px 0 0;text-align:center;}
+.img_slider_rec a.more:hover{color:#fff;text-decoration:none;}
+.img_slider_rec a.more{text-align:center;display:block;color:#fff;text-transform:uppercase;font-size:13px;margin:10px 0 0 0;}
+.img_slider_rec a.more:after{content:'';border-left:6px solid #111;border-right:5px solid rgba(0, 0, 0, 0);border-bottom:4px solid rgba(0, 0, 0, 0);width:0px;height:0px;border-top:4px solid rgba(0, 0, 0, 0);display:inline-block;margin:0 0 0 5px;}
+#recommend_area .ProductHome{margin-bottom:10px;}
+.news_header h1>span{background:#000;color:#FFF;padding:3px 60px 4px;font-weight:400;font-size:16px;text-transform:uppercase;}
+}

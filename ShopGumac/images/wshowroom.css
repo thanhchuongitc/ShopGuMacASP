@@ -1,0 +1,78 @@
+﻿#map {
+    width: 100%;
+    height: 420px;
+}
+
+/*.list-showroom {
+    margin-top: 10px;
+}*/
+
+.list-showroom .item-showroom .showroomname {
+    color: #111;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.list-showroom .item-showroom a.address {
+    color: #D4171F;
+    font-weight: bold;
+}
+
+.list-showroom .item-showroom ul {
+    list-style: none;
+    margin-bottom: 10px;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0;
+}
+
+    .list-showroom .item-showroom ul li {
+        font-size: 15px;
+    }
+
+.list-showroom .item-showroom a.viewmap {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.district_header {
+    background: #e7e7e9;
+    border: 1px solid #ccc;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 5px;
+    font-size: 13px;
+}
+
+.province_showroom_content, .list-showroom {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height: 384px;
+    overflow-y: scroll;
+}
+
+    .province_showroom_content p, .list-showroom p {
+        margin-bottom: 0;
+        padding: 7px 10px;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+    }
+
+        .province_showroom_content p:nth-child(even), .list-showroom p:nth-child(even) {
+            background: #e7e7e9;
+        }
+
+.showroom_title {
+    background: #949599;
+    color: #fff;
+    font-size: 16px;
+    padding:5px 0;
+    line-height:20px;
+}
+.number_yellow{
+    color:yellow;
+}

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ShopGumac.Models.ProductModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section cart{
+    @Html.Action("loadCart", "Index");
+}
+<div class="container">
+    <div class="newest_product_top">
+        <div class="birthday_balloon">
+            <h3 class="top_title">[Top mới nhất]</h3>
+            <h4 class="top_subtitle">New Arrival</h4>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="item_product_list col-lg-3 col-md-4 col-sm-6 col-xs-6">
+                <div class="product_list_item">
+                    <div class="listphoto_pro">
+                        <a href="@Url.Action("Detail","Index",new { id =item.Id })" class="product_url">
+                            <img width="100%" class="lazy-image" src="~/images/@item.image[0]" alt="Đầm caro tay b&#232;o" title="Đầm caro tay b&#232;o">
+
+                            <div class="icon-display-combo">
+                                <img class="lazy-load" data-src="/images/200k061020181044110754.png" src="#" alt="Đầm caro tay b&#232;o" title="Đầm caro tay b&#232;o">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="pro_info">
+                        <h3 class="titleProduct">
+                            <a href="@Url.Action("Detail","Index",new { id =item.Id })" class="product_url">
+                                @item.name
+                            </a>
+                        </h3>
+                        <div class="mPrice">
+                            @{
+                                if (item.discount != 0)
+                                {
+                                    var price = item.prices - item.prices * item.discount / 100;
+                                    <span class="sale_price_list_gs">
+                                        @price.ToString("#,#.00") đ
+                                    </span>
+                                }
+                            }
+
+                            <span class="price_sale_list">
+                                @item.prices.ToString("#,#.00") đ
+                            </span>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="clearfix" style="clear:both;"></div>
+        <div class="more_top">
+            <p>
+                Mời bạn
+                <a href="thoi-trang.html"> xem thêm những mẫu mới </a>
+                khác
+            </p>
+
+        </div>
+    </div>
+
+</div>
