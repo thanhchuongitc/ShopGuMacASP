@@ -1,0 +1,53 @@
+﻿@using ShopGumac.Models
+@model UserModel
+@{
+    Layout = null;
+}
+
+<li class="icon-login-header">
+    @if (Session["user"] != null)
+    {
+        <a class="user_header btnSignin btLogin" href="/thong-tin-khach-hang" style="cursor: pointer;">
+            <img width="25px" src="/images/dangnhap-01.png" alt="GUMAC" title="GUMAC">
+            <span>
+                Khách hàng
+            </span>
+        </a>
+        <div id="info-icon-logout">
+            <ul>
+                <li>
+                    @{
+                        var user = Session["user"] as UserModel;
+
+                        <a href="/thong-tin-khach-hang"><span><i class="fa fa-user" aria-hidden="true"></i></span> Xin chào @user.name</a>
+                    }
+                </li>
+                <li>
+                    <a href="javascript:void(0)" onclick="logout()"><span><i class="fa fa-sign-out" aria-hidden="true"></i></span> Đăng xuất</a>
+                </li>
+            </ul>
+        </div>
+
+    }
+    @if (Session["user"] == null)
+    {
+        <a class="user_header btnSignin btLogin" onclick="fnLogin();" style="cursor: pointer;">
+            <img width="25px" src="~/images/dangnhap-01.png" alt="GUMAC" title="GUMAC" />
+            <span>Đăng nhập</span>
+        </a>
+        <div id="info-icon-login">
+            <div class="form-group">
+                <button type="submit" class="btn login form-control col-md-9" onclick="fnLogin()">
+                    Đăng
+                    nhập
+                </button>
+                <button type="submit" class="btn login form-control col-md-9" onclick="fnRegister()">
+                    Tạo
+                    tài khoản
+                </button>
+
+            </div>
+        </div>
+    }
+
+</li>

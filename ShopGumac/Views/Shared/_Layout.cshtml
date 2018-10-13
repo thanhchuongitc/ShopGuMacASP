@@ -342,25 +342,7 @@
                             </a>
                         </li>
 
-                        <li class="icon-login-header">
-                            <a class="user_header btnSignin btLogin" onclick="fnLogin();" style="cursor: pointer;">
-                                <img width="25px" src="~/images/dangnhap-01.png" alt="GUMAC" title="GUMAC" />
-                                <span>Đăng nhập</span>
-                            </a>
-                            <div id="info-icon-login">
-                                <div class="form-group">
-                                    <button type="submit" class="btn login form-control col-md-9" onclick="fnLogin()">
-                                        Đăng
-                                        nhập
-                                    </button>
-                                    <button type="submit" class="btn login form-control col-md-9" onclick="fnRegister()">
-                                        Tạo
-                                        tài khoản
-                                    </button>
-                                    
-                                </div>
-                            </div>
-                        </li>
+                        @RenderSection("login",false)
                         @RenderSection("cart", false)
                     </ul>
                 </div>
@@ -1992,33 +1974,31 @@
                 var email = $('#w_email').val();
                 var pass = $('#w_pass').val();
                 $.ajax({
-                    url: "/WLogin/FnLogin",
-                    method: "POST",
+                    url: '@Url.Action("Login","User")',
+                    type: "POST",
                     data: {
-                        email: email, pass: pass
+                        email: email, password: pass
                     },
                     beforeSend: function () {
                         showSpinLoading();
                     },
                     success: function (data) {
-                        if (data.Code == 1) {
+                        debugger
+                        if (data=="1") {
                             $('#modalLogin').modal("hide");
-                            //showSuccess("Thành Công", data.message);
-                            hideSpinLoading();
-                            location.reload();
-                            return;
+                            $.notify("Thành công","success");
+                            setTimeout(() => {
+                                hideSpinLoading();
+                                location.reload();},500)
                         }
                         else {
-                            hideSpinLoading();
-                            showError('Lỗi', data.message);
-                            return;
+                            $.notify("Thất bại");
+                            setTimeout(() => { hideSpinLoading();});      
                         }
                     },
                     error: function (xhr, status, error) {
-                        var err = eval("(" + xhr.responseText + ")");
-                        console.log(err.Message);
-                        console.log(error);
-                        return;
+                        debugger
+                        
                     }
 
                 });
