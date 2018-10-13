@@ -41,14 +41,15 @@ namespace ShopGumac.Controllers
             var builder = Builders<BsonDocument>.Filter;
             var filter = builder.Eq("email", email) & builder.Eq("password",pwd);
             var res = db._database.GetCollection<BsonDocument>("customers").Count(filter);
-            var user = await db._database.GetCollection<BsonDocument>("customers").Find(filter).ToListAsync();
-            UserModel e = new UserModel();
-            var userT = user[0];
-            e.name = userT[1].ToString();
-            e.phone = userT[2].ToString();
-            e.address = userT[3].ToString();
+            
             if (res > 0)
             {
+                var user = await db._database.GetCollection<BsonDocument>("customers").Find(filter).ToListAsync();
+                UserModel e = new UserModel();
+                var userT = user[0];
+                e.name = userT[1].ToString();
+                e.phone = userT[2].ToString();
+                e.address = userT[3].ToString();
                 Session["user"] = e;
                 return "1";
             }
