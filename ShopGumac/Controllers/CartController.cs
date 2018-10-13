@@ -6,16 +6,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MongoDB.Bson;
+using ShopGumac.App_Start;
+
 namespace ShopGumac.Controllers
 {
     public class CartController : Controller
     {
-        MongoClient _client;
-        IMongoDatabase _database;
+        MongoContext cl;
         public CartController()
         {
-            _client = new MongoClient("mongodb://admin:123456789Aa@ds127293.mlab.com:27293/shop");
-            _database = _client.GetDatabase("shop");
+            cl = new MongoContext();
         }
         [HttpPost]
         public int AddCart(string id,string size,string quantity,string color,string name,string amount,string discount,string image)
@@ -94,7 +94,7 @@ namespace ShopGumac.Controllers
                 {"amount",prices},
             };
             docCustomer.Add("detail",docDetai);
-            _database.GetCollection<BsonDocument>("receipts").InsertOne(docCustomer);
+            cl._database.GetCollection<BsonDocument>("receipts").InsertOne(docCustomer);
             Session["cart"] = null;
             return "1";
         }
