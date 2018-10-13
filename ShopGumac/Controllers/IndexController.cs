@@ -3,6 +3,7 @@ using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ShopGumac.App_Start;
 using ShopGumac.Models;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -12,20 +13,15 @@ namespace ShopGumac.Controllers
     {
         // GET: Index
 
-        MongoClient _client;
-        IMongoDatabase _database;
-        MongoServer _server;
-        MongoDatabase database;
+        MongoContext cl;
         public IndexController()
         {
-            _client = new MongoClient("mongodb://admin:123456789Aa@ds127293.mlab.com:27293/shop");
-            _server = _client.GetServer();
-            database = _server.GetDatabase("shop");
-            _database = _client.GetDatabase("shop");
+            cl = new MongoContext();
+            
         }
         public ActionResult Index()
         {
-            var collection = _database.GetCollection<ProductModel>("products");
+            var collection = cl._database.GetCollection<ProductModel>("products");
             var product = collection.Find(new BsonDocument { }).ToList();                
             return View(product);
         }
@@ -35,7 +31,7 @@ namespace ShopGumac.Controllers
             if (string.IsNullOrEmpty(id))
                 return RedirectToAction("index");
             var builder = Query<ProductModel>.EQ(p=>p.Id,new ObjectId(id));
-            var product = database.GetCollection<ProductModel>("products").FindOne(builder);
+            var product = cl.database.GetCollection<ProductModel>("products").FindOne(builder);
             return View(product);
         }
 
