@@ -45,6 +45,10 @@ namespace ShopGumac.Controllers
             }
             return View();
         }
-      
+        
+        public ActionResult loadLogin()
+        {
+            return View();
+        }
     }
 }

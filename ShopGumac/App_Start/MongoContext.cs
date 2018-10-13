@@ -9,7 +9,7 @@ namespace ShopGumac.App_Start
     public class MongoContext
     {
         MongoClient _client;
-        public IMongoDatabase _database;
+        public MongoDB.Driver.IMongoDatabase _database;
         MongoServer _server;
         public MongoDatabase database;
         public MongoContext()
