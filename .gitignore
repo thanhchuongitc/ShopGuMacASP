@@ -8,3 +8,5 @@
 
 *.pdb
 >>>>>>> feature-login
+
+\.vs/ShopGumac/v15/Server/sqlite3/storage\.ide-wal
