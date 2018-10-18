@@ -36,7 +36,7 @@
                                 <td style="vertical-align: middle;">@item.name</td>
                                 <td style="vertical-align: middle;">@foreach(var size in item.size)
                                 {
-                                    @size
+                                    @size @Html.Raw("-")
                                 }</td>
                                 <td style="vertical-align: middle;">@foreach (var color in item.color)
                                 {
@@ -47,8 +47,8 @@
                                     <img width="70" src="~/images/@item.image[0]" /> 
                                 </td>
                                 <td style="vertical-align: middle;">
-                                <a data-toggle="tooltip" data-placement="top" title="Sửa" href=""><i class="fa fa-edit"></i></a>
-                                <a data-toggle="tooltip" data-placement="top" title="Xóa" href=""><i class="fa fa-trash"></i></a></td>
+                                <a data-toggle="tooltip" data-placement="top" title="Sửa" href="@Url.Action("EditProduct","Admin",new {id=item.Id})"><i class="fa fa-edit"></i></a>
+                                <a data-toggle="tooltip" data-placement="top" class="text-danger delete" title="Xóa" href="javascript:void(0)"><input name="id-product" type="hidden" value="@item.Id" /><i class="fa fa-trash"></i></a></td>
                             </tr>
                         }
                     </tbody>
@@ -67,6 +67,26 @@
         $("#dataTables-example").DataTable({
             responsive: true
         })
+        
     })
-
+    $(".delete").click(function(){
+        var v = confirm("Bạn có chắc xóa");
+        if (!v)
+            return
+        var $id = $(this).find('input[name="id-product"]').val();
+        $.ajax({
+            url: '@Url.Action("deleteProduct","Admin")',
+            type: 'post',
+            data: {id: $id},
+            success: function () {
+                setTimeout(function () {
+                    alert("Xóa thành công");
+                    window.location.reload();
+                },200)
+            },
+            error: function () {
+                alert("Lỗi");
+            }
+        })
+    })
 </script>

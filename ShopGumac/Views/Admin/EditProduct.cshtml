@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<div class="row">
+    <div class="col-lg-6">
+        <form role="form">
+            <div class="form-group">
+                <label>Tên sản phẩm</label>
+                <input class="form-control" value="@ViewBag.product[1]">
+                <p class="help-block">Example: Áo sơ mi cao cấp SM-12</p>
+            </div>
+            <div class="form-group">
+                <label>Giá</label>
+                <input class="form-control" value="@ViewBag.product[2]" placeholder="VD: 20.000 đ">
+            </div>
+            <div class="form-group">
+                <label>Kích cỡ</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="S" @foreach (var size in ViewBag.product[3]) { if (size == "S") { @Html.Raw("checked") } }>S
+                    </label>
+
+
+                </div>
+
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="M" @foreach (var size in ViewBag.product[3]) { if (size == "M") { @Html.Raw("checked") } }>M
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="L" @foreach (var size in ViewBag.product[3]) { if (size == "L") { @Html.Raw("checked") } }>L
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="XS" @foreach (var size in ViewBag.product[3]) { if (size == "XS") { @Html.Raw("checked") } }>XS
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="XL" @foreach (var size in ViewBag.product[3]) { if (size == "XL") { @Html.Raw("checked") } }>XL
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Màu</label>
+                <input class="form-control" placeholder="Mỗi màu kích nhau bới dấu ';' chấm phẩy">
+            </div>
+            <div class="form-group">
+                <label>Loại</label>
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ảnh</label>
+                <input type="file">
+            </div>
+            <div class="form-group">
+                <label>Thông tin thêm:</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Sửa</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+    </div>
+    <!-- /.col-lg-6 (nested) -->
+
+</div>
