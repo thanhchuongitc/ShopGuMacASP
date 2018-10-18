@@ -10,3 +10,13 @@
 >>>>>>> feature-login
 
 \.vs/ShopGumac/v15/Server/sqlite3/storage\.ide-wal
+
+ShopGumac/obj/Debug/ShopGumac\.csproj\.CoreCompileInputs\.cache
+
+ShopGumac/obj/Debug/ShopGumac\.csprojAssemblyReference\.cache
+
+*.ide
+
+*.ide-shm
+
+*.cache
