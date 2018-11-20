@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Add Product";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+<div class="row">
+    <div class="col-lg-6">
+        <form role="form" method="post" action="@Url.Action("AddProduct","Admin")" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Tên sản phẩm</label>
+                <input required class="form-control" name="product_name" value="@ViewBag.product[2]">
+                <p class="help-block">Example: Áo sơ mi cao cấp SM-12</p>
+            </div>
+            <div class="form-group">
+                <label>Giá</label>
+                <input required class="form-control" name="price" value="" placeholder="VD: 20.000 đ">
+            </div>
+            <div class="form-group">
+                <label>Kích cỡ</label>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="size[]" value="S">S
+                    </label>
+                </div>
+
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="size[]" value="M">M
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="size[]" value="L">L
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="size[]" value="XS">XS
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="size[]" value="XL">XL
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Màu</label>
+                <input class="form-control" required name="color" placeholder="Mỗi màu kích nhau bới dấu ';' chấm phẩy">
+            </div>
+            <div class="form-group">
+                <label>Giảm giá (%):</label>
+                <input class="form-control" required name="discount" placeholder="Example: 20%">
+            </div>
+            <div class="form-group">
+                <label>Số lượng:</label>
+                <input class="form-control" required name="inventory" placeholder="">
+            </div>
+            <div class="form-group">
+                <label>Loại</label>
+                <select class="form-control" required name="type_product">
+                    <option value="Đầm">Đầm</option>
+                    <option value="Áo">Áo</option>
+                    <option value="Giầy">Giầy</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Ảnh</label>
+                <input required type="file" name="file">
+            </div>
+            <div class="form-group">
+                <label>Mô tả:</label>
+                <textarea required class="form-control" name="note" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Add</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+        </form>
+    </div>
+    <!-- /.col-lg-6 (nested) -->
+</div>
