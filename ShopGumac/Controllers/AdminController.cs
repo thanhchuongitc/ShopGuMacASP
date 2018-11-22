@@ -101,10 +101,8 @@ namespace ShopGumac.Controllers
         [HttpPost]
         public ActionResult updateProduct(string product_name, string price,
             string[] size, string note, string color, string discount,
-            string inventory, string type_product,string id)
+            string inventory, string type_product,string id,string file)
         {
-            try
-            {
                 string[] arrColor = color.Split(new char[] { ';' });
                 BsonArray arrbsSize = new BsonArray();
                 foreach (var i in size)
@@ -125,19 +123,13 @@ namespace ShopGumac.Controllers
                 { "inventory",int.Parse(inventory)},
                 {"descript",note},
                 {"type",type_product},
+                    {"img",file }
                
             };
                 var builder = Builders<BsonDocument>.Filter;
                 var filter = builder.Eq("_id", ObjectId.Parse(id));
                 client._database.GetCollection<BsonDocument>("products").FindOneAndUpdate(filter, document);
                 return RedirectToAction("ListProduct");
-            }
-            catch
-            {
-                return RedirectToAction("ListProduct");
-
-            }
-            
 
         }
         [HttpPost]
